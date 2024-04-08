@@ -20,6 +20,7 @@ import MenuItem from "@mui/material/MenuItem";
 import { Logo } from "../../assets/svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
+import BurgerButton from "./BurgerButton";
 
 const pages = [
   "Мої курси",
@@ -74,7 +75,7 @@ const Navbar: FC = () => {
             onClick={handleOpenNavMenu}
             color="primary"
           >
-            |||
+            <BurgerButton isActive={Boolean(anchorElNav)} />
           </IconButton>
           <Menu
             id="menu-appbar"

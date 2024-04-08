@@ -78,3 +78,42 @@ export const ButtonOrange = styled(DefaultButton)`
   gap: 5px;
   font: 400 16px/40px Open Sans !important;
 `;
+
+export const BurgerWrapper = styled.div<{ $isActive: boolean }>`
+  .hamburger {
+    margin: 0;
+    margin-left: 15px;
+    padding: 0;
+    float: left;
+    transition: opacity 0.3s;
+  }
+
+  .hamburger:hover {
+    cursor: pointer;
+  }
+
+  .hamburger .line {
+    width: 30px;
+    height: 5px;
+    background-color: #244b83;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    border-radius: 5px;
+  }
+
+  ${({ $isActive }) =>
+    $isActive &&
+    `
+.hamburger .line:nth-child(2) {
+  opacity: 0 !important;
+}
+
+.hamburger .line:nth-child(1) {
+  transform: translateY(10px) rotate(45deg) !important;
+}
+
+.hamburger .line:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg) !important;
+}
+`}
+`;

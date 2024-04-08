@@ -76,10 +76,3 @@ export const ButtonOrange = styled(DefaultButton)`
   background: #f58932 !important;
   gap: 5px;
 `;
-
-export const UserArrow = styled.span`
-  &:before {
-    content: \f0d7;
-    font-weight: 900;
-  }
-`;

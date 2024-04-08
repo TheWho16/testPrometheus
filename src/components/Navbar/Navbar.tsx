@@ -113,7 +113,7 @@ const Navbar: FC = () => {
                 </IconButton>
               </Tooltip>
             </AccountSettingsWrapper>
-            Юзер
+            <span style={{ marginRight: "10px" }}>Юзер</span>
             <FontAwesomeIcon icon={faCaretDown} />
           </ButtonOrange>
           <Menu

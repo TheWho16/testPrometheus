@@ -49,9 +49,10 @@ export const AccountSettingsWrapper = styled.div`
 export const DefaultButton = styled(Button)`
   border: none;
   outline: none;
+  text-transform: none !important;
   border-radius: 8px !important;
   max-height: 46px !important;
-  font: 400 16px/40px Open Sans !important;
+  font: 600 14px/40px Open Sans !important;
   transition: background-color 0.2s ease !important;
   background: #244b83 !important;
   color: #fff !important;
@@ -75,4 +76,5 @@ export const DefaultButton = styled(Button)`
 export const ButtonOrange = styled(DefaultButton)`
   background: #f58932 !important;
   gap: 5px;
+  font: 400 16px/40px Open Sans !important;
 `;

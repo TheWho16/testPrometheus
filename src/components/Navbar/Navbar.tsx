@@ -7,6 +7,10 @@ import {
   DefaultButton,
   ButtonOrange,
   ButtonGroupWrapper,
+  NavbarLogoDesktop,
+  AccordionSummaryContentWrapper,
+  AccordionDetailsContentWrapper,
+  CustomMenuItem,
 } from "./Navbar.styled";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -21,20 +25,21 @@ import { Logo } from "../../assets/svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 import BurgerButton from "./BurgerButton";
+import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
 
 const pages = [
-  "Мої курси",
-  "Профіль",
-  "Налаштування",
-  "Історія замовлень",
-  "Вийти",
+  "Мої курси >>",
+  "Профіль >>",
+  "Налаштування >>",
+  "Історія замовлень >>",
+  "Вийти >>",
 ];
-const settings = ["Істр", "Account", "Dashboard", "Logout"];
 
 const Navbar: FC = () => {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
   );
+  const [openNav, setOpenNav] = React.useState<boolean>(false);
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
     null
   );
@@ -57,60 +62,50 @@ const Navbar: FC = () => {
   return (
     <NavbarWrapper>
       <CustomAppBar>
-        {/* <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} /> */}
         <Box
           sx={{
             flexGrow: 1,
             display: { xs: "flex", md: "none" },
             position: "absolute",
+            width: "100%",
+            minHeight: "70px",
             left: 0,
             top: 0,
           }}
         >
-          <IconButton
-            size="large"
-            aria-label="account of current user"
-            aria-controls="menu-appbar"
-            aria-haspopup="true"
-            onClick={handleOpenNavMenu}
-            color="primary"
+          <Accordion
+            sx={{ width: "100%" }}
+            onChange={() => setOpenNav(!openNav)}
+            expanded={openNav}
           >
-            <BurgerButton isActive={Boolean(anchorElNav)} />
-          </IconButton>
-          <Menu
-            id="menu-appbar"
-            anchorEl={anchorElNav}
-            anchorOrigin={{
-              vertical: "bottom",
-              horizontal: "left",
-            }}
-            keepMounted
-            transformOrigin={{
-              vertical: "top",
-              horizontal: "left",
-            }}
-            open={Boolean(anchorElNav)}
-            onClose={handleCloseNavMenu}
-            sx={{
-              display: { xs: "block", md: "none" },
-            }}
-          >
-            {pages.map((page) => (
-              <MenuItem key={page} onClick={handleCloseNavMenu}>
-                <Typography textAlign="center">{page}</Typography>
-              </MenuItem>
-            ))}
-          </Menu>
+            <AccordionSummary aria-controls="panel1-content" id="panel1-header">
+              <BurgerButton isActive={openNav} />
+              <AccordionSummaryContentWrapper>
+                <NavbarLogo src={Logo} />
+              </AccordionSummaryContentWrapper>
+            </AccordionSummary>
+            <AccordionDetails sx={{ padding: "0 16px" }}>
+              <AccordionDetailsContentWrapper>
+                {pages.map((page) => (
+                  <CustomMenuItem
+                    key={page}
+                    onClick={() => setOpenNav(!openNav)}
+                  >
+                    <Typography textAlign="center">{page}</Typography>
+                  </CustomMenuItem>
+                ))}
+              </AccordionDetailsContentWrapper>
+            </AccordionDetails>
+          </Accordion>
         </Box>
-        {/* <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} /> */}
-        <NavbarLogo src={Logo} />
+        <NavbarLogoDesktop src={Logo} />
         <ButtonGroupWrapper>
           <a href="#">Допомога</a>
           <ButtonOrange onClick={handleOpenUserMenu}>
             <AccountSettingsWrapper>
               <Tooltip title="Open settings">
                 <IconButton sx={{ p: 0 }}>
-                  <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                  <Avatar alt="Avatar" src="/static/images/avatar/2.jpg" />
                 </IconButton>
               </Tooltip>
             </AccountSettingsWrapper>

@@ -1,4 +1,4 @@
-import { AppBar, Button } from "@mui/material";
+import { AccordionSummary, AppBar, Button, MenuItem } from "@mui/material";
 import { OverridableComponent } from "@mui/material/OverridableComponent";
 import styled from "styled-components";
 import { ButtonTypeMap } from "@mui/material";
@@ -13,6 +13,14 @@ export const NavbarLogo = styled.img`
   display: block;
   width: auto;
   height: 34px;
+`;
+export const NavbarLogoDesktop = styled.img`
+  display: block;
+  width: auto;
+  height: 34px;
+  @media (max-width: 740px) {
+    display: none;
+  }
 `;
 
 export const CustomAppBar = styled.div`
@@ -36,7 +44,7 @@ export const ButtonGroupWrapper = styled.div`
   flex-direction: row;
   justify-content: center;
   gap: 20px;
-  @media (max-width: 740px) {
+  @media (max-width: 899px) {
     display: none;
   }
 `;
@@ -80,6 +88,8 @@ export const ButtonOrange = styled(DefaultButton)`
 `;
 
 export const BurgerWrapper = styled.div<{ $isActive: boolean }>`
+  position: absolute;
+  left: 0;
   .hamburger {
     margin: 0;
     margin-left: 15px;
@@ -116,4 +126,49 @@ export const BurgerWrapper = styled.div<{ $isActive: boolean }>`
   transform: translateY(-10px) rotate(-45deg) !important;
 }
 `}
+`;
+
+export const AccordionSummaryWrapper = styled.div`
+  width: 100%;
+  max-with: 100%;
+`;
+
+export const AccordionSummaryContentWrapper = styled.div`
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 6px 0px;
+`;
+export const AccordionDetailsContentWrapper = styled.div`
+  width: 100%;
+  border-top: 1px solid #244b83;
+`;
+
+export const CustomMenuItem = styled(MenuItem)`
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  outline: none;
+  background-color: #fbfbfb !important;
+  width: 100%;
+  padding: 12px 20px !important;
+  border-bottom: 1px solid #e7e7e7 !important;
+  color: #9e9e9e !important;
+  &:hover {
+    cursor: pointer;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: #767676 !important;
+    }
+  }
+
+  @media (hover: none) {
+    &:active {
+      background-color: #767676 !important;
+    }
+  }
 `;

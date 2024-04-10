@@ -4,8 +4,6 @@ import {
   NavbarWrapper,
   CustomAppBar,
   AccountSettingsWrapper,
-  DefaultButton,
-  ButtonOrange,
   ButtonGroupWrapper,
   NavbarLogoDesktop,
   AccordionSummaryContentWrapper,
@@ -26,6 +24,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 import BurgerButton from "./BurgerButton";
 import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
+import { ButtonOrange, DefaultButton } from "../Buttons";
 
 const pages = [
   "Мої курси >>",
@@ -36,23 +35,13 @@ const pages = [
 ];
 
 const Navbar: FC = () => {
-  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
-    null
-  );
   const [openNav, setOpenNav] = React.useState<boolean>(false);
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
     null
   );
 
-  const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElNav(event.currentTarget);
-  };
   const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElUser(event.currentTarget);
-  };
-
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
   };
 
   const handleCloseUserMenu = () => {
@@ -103,11 +92,7 @@ const Navbar: FC = () => {
           <a href="#">Допомога</a>
           <ButtonOrange onClick={handleOpenUserMenu}>
             <AccountSettingsWrapper>
-              <Tooltip title="Open settings">
-                <IconButton sx={{ p: 0 }}>
-                  <Avatar alt="Avatar" src="/static/images/avatar/2.jpg" />
-                </IconButton>
-              </Tooltip>
+              <Avatar alt="Avatar" src="/static/images/avatar/2.jpg" />
             </AccountSettingsWrapper>
             <span style={{ marginRight: "10px" }}>Юзер</span>
             <FontAwesomeIcon icon={faCaretDown} />
@@ -134,7 +119,7 @@ const Navbar: FC = () => {
               </MenuItem>
             ))}
           </Menu>
-          <DefaultButton onClick={handleCloseNavMenu}>Всі курси</DefaultButton>
+          <DefaultButton>Всі курси</DefaultButton>
         </ButtonGroupWrapper>
       </CustomAppBar>
     </NavbarWrapper>

@@ -36,7 +36,7 @@ export const CourseItemTitle = styled.h3`
   line-height: 24px;
   color: #18191f;
   width: 272px;
-  min-height: 48px;
+
   margin-bottom: 12px;
 `;
 export const CourseItemDescription = styled.div`
@@ -45,4 +45,12 @@ export const CourseItemDescription = styled.div`
   line-height: 20px;
   color: #18191f;
   display: block;
+`;
+
+export const CourseItemButtonsWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
 `;

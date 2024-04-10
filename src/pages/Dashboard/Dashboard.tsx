@@ -9,6 +9,8 @@ import {
   DashboardWrapper,
 } from "./Dashboard.styled";
 
+import CourseItem from "./Details";
+
 const Dashboard: FC = () => {
   const [searchInputValue, setSearchInputValue] = useState("");
 
@@ -22,6 +24,7 @@ const Dashboard: FC = () => {
       <DashboardContent>
         <FlexColumn style={{ flexGrow: 1 }}>
           <DashboardHeader>Мої курси</DashboardHeader>
+          <CourseItem />
         </FlexColumn>
         <SearchInput
           value={searchInputValue}

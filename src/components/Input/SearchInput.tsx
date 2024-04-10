@@ -12,7 +12,7 @@ export type TInput = {
 const SearchInput: React.FC<TInput> = ({ value, onChangeInput, onSubmit }) => {
   return (
     <CustomOutlinedInput
-      sx={{ ml: 1, pr: 0, width: "300px" }}
+      sx={{ ml: 1, pr: 0, width: "300px", maxHeight: "50px" }}
       placeholder=""
       inputProps={{ "aria-label": "" }}
       value={value}

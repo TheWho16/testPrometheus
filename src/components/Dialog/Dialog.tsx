@@ -1,9 +1,11 @@
 import React, { FC, useState } from "react";
-import { Dialog } from "@mui/material";
+import { Checkbox, Dialog } from "@mui/material";
 import {
+  CheckboxLabel,
   CloseDialogButtonIcon,
   DialogButtonTitle,
   DialogContent,
+  DialogSubContent,
   DialogWrapper,
 } from "./Dialog.styled";
 import { DefaultButton } from "../Buttons";
@@ -36,7 +38,18 @@ const CustomDialog: FC<TCustomDialog> = ({
 
         <DialogContent>
           <DialogButtonTitle>{title}</DialogButtonTitle>
-          <DefaultButton>{buttonText}</DefaultButton>
+          <DialogSubContent>
+            {isCheckMark && (
+              <CheckboxLabel
+                style={{ width: "100%" }}
+                control={<Checkbox defaultChecked />}
+                label={isMarkText}
+              />
+            )}
+            <DefaultButton style={{ width: "100%" }}>
+              {buttonText}
+            </DefaultButton>
+          </DialogSubContent>
         </DialogContent>
       </DialogWrapper>
     </Dialog>

@@ -1,3 +1,4 @@
+import { FormControlLabel } from "@mui/material";
 import styled from "styled-components";
 
 export const DialogWrapper = styled.div`
@@ -18,6 +19,13 @@ export const DialogContent = styled.div`
   justify-content: center;
   align-items: center;
   padding: 20px 30px;
+`;
+
+export const DialogSubContent = styled.div`
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `;
 
 export const CloseDialogButtonIcon = styled.button`
@@ -54,7 +62,14 @@ export const DialogButtonTitle = styled.h2`
   color: #000;
   text-align: center;
   padding-bottom: 15px;
-  border-bottom: 2px solid grey;
+  border-bottom: 2px solid #d4d4d4;
   margin-bottom: 35px;
 }
+`;
+
+export const CheckboxLabel = styled(FormControlLabel)`
+  color: #313131 !important;
+  font: italic 300 1rem / 1.6rem "Open Sans", sans-serif !important;
+  margin-bottom: 5px !important;
+  text-shadow: 0 1px rgba(255, 255, 255, 0.4) !important;
 `;

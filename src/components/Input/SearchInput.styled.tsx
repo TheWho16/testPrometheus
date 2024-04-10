@@ -2,6 +2,7 @@ import { IconButton, OutlinedInput } from "@mui/material";
 import styled from "styled-components";
 import { IconButtonTypeMap, OutlinedInputProps } from "@mui/material";
 import { OverridableComponent } from "@mui/material/OverridableComponent";
+import { Breakpoints } from "../../enums/Breakpoints";
 
 export const CustomIconButton = styled(IconButton)`
   border: none;
@@ -22,8 +23,8 @@ export const CustomIconButton = styled(IconButton)`
   border-bottom-left-radius: 0 !important;
   width: 45px !important;
 
-  @media (max-width: 740px) {
-    height: 54px !important;
+  @media (max-width: ${Breakpoints.MD}px) {
+    height: 50px !important;
   }
   &:hover {
     cursor: pointer;
@@ -46,7 +47,7 @@ export const CustomIconButton = styled(IconButton)`
 
 export const CustomOutlinedInput = styled(OutlinedInput)`
   width: 300px !important;
-  @media (max-width: 740px) {
+  @media (max-width: ${Breakpoints.MD}px) {
     width: 98% !important;
   }
 `;
@@ -57,4 +58,5 @@ export const CustomLabel = styled.label`
   line-height: 170%;
   color: #000;
   display: block;
+  margin-left: 8px;
 `;

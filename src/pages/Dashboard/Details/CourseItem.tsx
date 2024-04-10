@@ -17,12 +17,29 @@ import {
 } from "./CourseItem.styled";
 import CustomDialog from "../../../components/Dialog";
 
-const CourseItem: FC = () => {
+export type TCourseItemData = {
+  title: string;
+  description: string;
+  startDate: string;
+  id: string;
+  img: string;
+  url?: string;
+};
+
+type TCourseItem = {
+  course: TCourseItemData;
+  keyId: string;
+};
+
+const CourseItem: FC<TCourseItem> = ({ course, keyId }) => {
+  const { title, description, startDate, id, img, url } = course;
   const [anchorElCourseItem, setAnchorCourseItem] =
     useState<null | HTMLElement>(null);
 
   const [openSubscribeDialog, setOpenSubscribeDialog] =
     useState<boolean>(false);
+
+  const [openEmailDialog, setOpenEmailDialog] = useState<boolean>(false);
 
   const handleOpenCourseItemMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorCourseItem(event.currentTarget);
@@ -35,21 +52,23 @@ const CourseItem: FC = () => {
 
   return (
     <>
-      <CourseItemWrapper>
+      <CourseItemWrapper key={keyId}>
         <CourseItemImgWrapper>
-          <CourseItemImg src={CourseImg1} />
+          <CourseItemImg src={img} />
         </CourseItemImgWrapper>
         <CourseItemContentWrapper>
-          <CourseItemTitle>
-            Особливості роботи офіцера-психолога в умовах бойових дій
-          </CourseItemTitle>
-          <CourseItemDescription>
-            Військовий інститут Київського національного університету імені
-            Тараса Шевченка -{" "}
-          </CourseItemDescription>
-          <CourseItemDescription>
-            Розпочався - 9 квіт 2024 р. 03:00 EEST
-          </CourseItemDescription>
+          {url ? (
+            <CourseItemTitle
+              style={{ cursor: "pointer" }}
+              onClick={() => window.open(url, "_blank")}
+            >
+              {title}
+            </CourseItemTitle>
+          ) : (
+            <CourseItemTitle>{title}</CourseItemTitle>
+          )}
+          <CourseItemDescription>{description}</CourseItemDescription>
+          <CourseItemDescription>{startDate}</CourseItemDescription>
           <ButtonOutline style={{ width: "40%", margin: "6px auto" }}>
             Переглянути курс
           </ButtonOutline>
@@ -81,7 +100,9 @@ const CourseItem: FC = () => {
                   <ButtonOutline onClick={() => setOpenSubscribeDialog(true)}>
                     Відписатися від курсу
                   </ButtonOutline>
-                  <ButtonOutline>Налаштування електронної пошти</ButtonOutline>
+                  <ButtonOutline onClick={() => setOpenEmailDialog(true)}>
+                    Налаштування електронної пошти
+                  </ButtonOutline>
                 </FlexColumn>
               </Menu>
             </FlexColumn>
@@ -91,8 +112,16 @@ const CourseItem: FC = () => {
       <CustomDialog
         open={openSubscribeDialog}
         handleClose={() => setOpenSubscribeDialog(false)}
-        title="ВИ ВПЕВНЕНІ, ЩО ХОЧЕТЕ ВІДПИСАТИСЯ ВІД ОСОБЛИВОСТІ РОБОТИ ОФІЦЕРА-ПСИХОЛОГА В УМОВАХ БОЙОВИХ ДІЙ (FWOP101)?"
+        title={`ВИ ВПЕВНЕНІ, ЩО ХОЧЕТЕ ВІДПИСАТИСЯ ВІД ${title}(${id})?`}
         buttonText="Відписатися від курсу"
+      />
+      <CustomDialog
+        open={openEmailDialog}
+        handleClose={() => setOpenEmailDialog(false)}
+        title={`НАЛАШТУВАННЯ ЕЛЕКТРОННОЇ ПОШТИ ДЛЯ ${id}?`}
+        buttonText="Зберегти налаштування"
+        isCheckMark
+        isMarkText="Отримувати листи від курсу"
       />
     </>
   );

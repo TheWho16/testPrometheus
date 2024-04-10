@@ -3,6 +3,7 @@ import { AccordionSummary, AppBar, Button, MenuItem } from "@mui/material";
 import { OverridableComponent } from "@mui/material/OverridableComponent";
 
 import { ButtonTypeMap } from "@mui/material";
+import { Breakpoints } from "../../enums/Breakpoints";
 
 export const NavbarWrapper = styled.div`
   position: absolute;
@@ -19,7 +20,7 @@ export const NavbarLogoDesktop = styled.img`
   display: block;
   width: auto;
   height: 34px;
-  @media (max-width: 740px) {
+  @media (max-width: ${Breakpoints.MD}px) {
     display: none;
   }
 `;
@@ -33,7 +34,7 @@ export const CustomAppBar = styled.div`
   justify-content: space-between;
   padding: 15px 100px 15px;
 
-  @media (max-width: 740px) {
+  @media (max-width: ${Breakpoints.MD}px) {
     padding: 15px;
     justify-content: center;
   }
@@ -45,12 +46,12 @@ export const ButtonGroupWrapper = styled.div`
   flex-direction: row;
   justify-content: center;
   gap: 20px;
-  @media (max-width: 899px) {
+  @media (max-width: ${Breakpoints.MD}px) {
     display: none;
   }
 `;
 export const AccountSettingsWrapper = styled.div`
-  @media (max-width: 740px) {
+  @media (max-width: ${Breakpoints.MD}px) {
     display: none;
   }
 `;

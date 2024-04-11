@@ -49,6 +49,10 @@ export const ButtonGroupWrapper = styled.div`
   }
 `;
 export const AccountSettingsWrapper = styled.div`
+  border-radius: 50%;
+  background: white;
+  width: 40px;
+  height: 40px;
   @media (max-width: ${Breakpoints.MD}px) {
     display: none;
   }

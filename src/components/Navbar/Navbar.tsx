@@ -18,7 +18,7 @@ import Avatar from "@mui/material/Avatar";
 import MenuItem from "@mui/material/MenuItem";
 import { Logo } from "../../assets/svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
+import { faCaretDown, faUser } from "@fortawesome/free-solid-svg-icons";
 import BurgerButton from "./BurgerButton";
 import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
 import { ButtonOrange, DefaultButton } from "../Buttons";
@@ -89,7 +89,7 @@ const Navbar: FC = () => {
           <a href="https://prometheus.org.ua/faq/">Допомога</a>
           <ButtonOrange onClick={handleOpenUserMenu}>
             <AccountSettingsWrapper>
-              <Avatar alt="Avatar" src="/static/images/avatar/2.jpg" />
+              <FontAwesomeIcon icon={faUser} style={{ color: "#c9c9c9" }} />
             </AccountSettingsWrapper>
             <span style={{ marginRight: "10px" }}>Юзер</span>
             <FontAwesomeIcon icon={faCaretDown} />

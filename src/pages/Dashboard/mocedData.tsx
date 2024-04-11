@@ -20,6 +20,7 @@ export const courseData = [
     startDate: "Починається - 30 квіт 2024 р. 03:00 EEST",
     id: "BPM101",
     img: CourseImg2,
+    url: "https://apps.prometheus.org.ua/learning/course/course-v1:Prometheus+FWOP101+2024_T1/home",
   },
   {
     title: "«Хамелеон». Уникнення полону та психологія виживання в полоні.",
@@ -27,6 +28,8 @@ export const courseData = [
     startDate: "Розпочався - 3 квіт 2024 р. 07:30 EEST",
     id: "AR5101",
     img: CourseImg1,
+    url: "https://apps.prometheus.org.ua/learning/course/course-v1:Prometheus+FWOP101+2024_T1/home",
+
     twitter:
       "https://apps.prometheus.org.ua/learning/course/course-v1:Prometheus+FWOP101+2024_T1/home",
   },
@@ -37,6 +40,7 @@ export const courseData = [
     id: "AR11",
     img: CourseImg2,
     url: "https://apps.prometheus.org.ua/learning/course/course-v1:Prometheus+FWOP101+2024_T1/home",
+
     twitter:
       "https://apps.prometheus.org.ua/learning/course/course-v1:Prometheus+FWOP101+2024_T1/home",
     facebook:

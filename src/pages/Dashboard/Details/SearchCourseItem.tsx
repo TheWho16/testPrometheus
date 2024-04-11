@@ -22,7 +22,7 @@ const SearchCourseItem: FC<TCourseItem> = ({ course, keyId }) => {
         onClick={() => url && window.open(url, "_blank")}
         key={keyId}
       >
-        <SearchCourseItemLink href={url}>
+        <SearchCourseItemLink onClick={() => url && window.open(url, "_blank")}>
           Показати <FontAwesomeIcon icon={faArrowRight} />
         </SearchCourseItemLink>
         <SearchCourseItemTitle>{title}</SearchCourseItemTitle>

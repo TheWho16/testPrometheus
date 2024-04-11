@@ -61,6 +61,7 @@ export const FooterAside = styled.div`
   width: 100%;
   display: flex;
   margin: 0 auto;
+  padding-bottom: 40px;
 
   @media (max-width: ${Breakpoints.MD}px) {
     max-width: -webkit-fill-available !important;

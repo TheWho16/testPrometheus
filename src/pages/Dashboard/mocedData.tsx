@@ -1,4 +1,9 @@
-import { CourseImg1, CourseImg2 } from "../../assets/img";
+import {
+  CourseImg1,
+  CourseImg2,
+  CourseImg3,
+  CourseImg4,
+} from "../../assets/img";
 
 export const courseData = [
   {
@@ -27,7 +32,7 @@ export const courseData = [
     description: "Центр готовності цивільних Благодійного фонду Сергія Притули",
     startDate: "Розпочався - 3 квіт 2024 р. 07:30 EEST",
     id: "AR5101",
-    img: CourseImg1,
+    img: CourseImg4,
     url: "https://apps.prometheus.org.ua/learning/course/course-v1:Prometheus+FWOP101+2024_T1/home",
 
     twitter:
@@ -38,7 +43,7 @@ export const courseData = [
     description: "Центр спеціальної підготовки ASKOLD -",
     startDate: "Розпочався - 31 бер 2023 р. 03:00 EEST",
     id: "AR11",
-    img: CourseImg2,
+    img: CourseImg3,
     url: "https://apps.prometheus.org.ua/learning/course/course-v1:Prometheus+FWOP101+2024_T1/home",
 
     twitter:

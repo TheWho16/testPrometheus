@@ -1,8 +1,6 @@
 import styled from "styled-components";
-import { AccordionSummary, AppBar, Button, MenuItem } from "@mui/material";
-import { OverridableComponent } from "@mui/material/OverridableComponent";
+import { MenuItem } from "@mui/material";
 
-import { ButtonTypeMap } from "@mui/material";
 import { Breakpoints } from "../../enums/Breakpoints";
 
 export const NavbarWrapper = styled.div`

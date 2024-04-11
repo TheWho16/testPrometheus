@@ -52,7 +52,6 @@ const CourseItem: FC<TCourseItem> = ({ course, keyId }) => {
   };
 
   const handleCloseCourseItemMenu = () => {
-    console.log("handleCloseCourseItemMenu");
     setAnchorCourseItem(null);
   };
 

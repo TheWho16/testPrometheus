@@ -7,7 +7,6 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Divider } from "@mui/material";
 import React, { FC } from "react";
-import { FlexRow } from "../Wrappers/Wrappers.styled";
 import {
   FooterContainer,
   FooterWrapper,

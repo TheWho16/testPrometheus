@@ -25,7 +25,6 @@ const Dashboard: FC = () => {
   >();
 
   const handleSubmit = (clearInput?: boolean) => {
-    console.log("clearInput", clearInput);
     if (clearInput) {
       setSearchInputValue("");
       setSearchCourses(undefined);
@@ -42,7 +41,6 @@ const Dashboard: FC = () => {
       )
     );
   };
-  console.log("searchCourses", searchCourses);
 
   return (
     <DashboardWrapper>

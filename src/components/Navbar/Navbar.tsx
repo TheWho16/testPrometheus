@@ -11,14 +11,10 @@ import {
   CustomMenuItem,
   MobMenuText,
 } from "./Navbar.styled";
-import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import Avatar from "@mui/material/Avatar";
-import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { Logo } from "../../assets/svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -28,11 +24,11 @@ import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
 import { ButtonOrange, DefaultButton } from "../Buttons";
 
 const pages = [
-  "Мої курси ",
-  "Профіль ",
+  "Мої курси",
+  "Профіль",
   "Налаштування",
   "Історія замовлень",
-  "Вийти ",
+  "Вийти",
 ];
 
 const Navbar: FC = () => {
@@ -90,7 +86,7 @@ const Navbar: FC = () => {
         </Box>
         <NavbarLogoDesktop src={Logo} />
         <ButtonGroupWrapper>
-          <a href="#">Допомога</a>
+          <a href="https://prometheus.org.ua/faq/">Допомога</a>
           <ButtonOrange onClick={handleOpenUserMenu}>
             <AccountSettingsWrapper>
               <Avatar alt="Avatar" src="/static/images/avatar/2.jpg" />

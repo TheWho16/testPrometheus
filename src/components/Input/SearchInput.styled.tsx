@@ -1,6 +1,6 @@
 import { IconButton, OutlinedInput } from "@mui/material";
 import styled from "styled-components";
-import { IconButtonTypeMap, OutlinedInputProps } from "@mui/material";
+import { IconButtonTypeMap } from "@mui/material";
 import { OverridableComponent } from "@mui/material/OverridableComponent";
 import { Breakpoints } from "../../enums/Breakpoints";
 

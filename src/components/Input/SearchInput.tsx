@@ -8,7 +8,6 @@ import {
   SearchForm,
 } from "./SearchInput.styled";
 import { InputAdornment } from "@mui/material";
-import { FlexColumn } from "../Wrappers/Wrappers.styled";
 export type TInput = {
   value?: string;
   onChangeInput: (value: string) => void;

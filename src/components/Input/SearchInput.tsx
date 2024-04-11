@@ -5,6 +5,7 @@ import {
   CustomIconButton,
   CustomLabel,
   CustomOutlinedInput,
+  SearchForm,
 } from "./SearchInput.styled";
 import { InputAdornment } from "@mui/material";
 import { FlexColumn } from "../Wrappers/Wrappers.styled";
@@ -17,7 +18,13 @@ export type TInput = {
 const SearchInput: React.FC<TInput> = ({ value, onChangeInput, onSubmit }) => {
   const [isSubmit, setIsSubmit] = React.useState(false);
   return (
-    <FlexColumn>
+    <SearchForm
+      onSubmit={(e) => {
+        e.preventDefault();
+        onSubmit();
+        setIsSubmit(true);
+      }}
+    >
       <CustomLabel>Шукати в курсах</CustomLabel>
 
       <CustomOutlinedInput
@@ -25,7 +32,10 @@ const SearchInput: React.FC<TInput> = ({ value, onChangeInput, onSubmit }) => {
         placeholder=""
         inputProps={{ "aria-label": "" }}
         value={value}
-        onChange={(e) => onChangeInput(e.target.value)}
+        onChange={(e) => {
+          if (isSubmit) setIsSubmit(false);
+          onChangeInput(e.target.value);
+        }}
         endAdornment={
           <InputAdornment
             sx={{
@@ -63,7 +73,7 @@ const SearchInput: React.FC<TInput> = ({ value, onChangeInput, onSubmit }) => {
           </InputAdornment>
         }
       />
-    </FlexColumn>
+    </SearchForm>
   );
 };
 export default SearchInput;

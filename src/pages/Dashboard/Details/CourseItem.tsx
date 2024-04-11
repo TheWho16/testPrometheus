@@ -3,9 +3,11 @@ import React, { FC, useState } from "react";
 import { faGear } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconButton, Menu } from "@mui/material";
-import { CourseImg1 } from "../../../assets/img";
 import { ButtonOutline } from "../../../components/Buttons";
-import { FlexColumn } from "../../../components/Wrappers/Wrappers.styled";
+import {
+  FlexColumn,
+  FlexRow,
+} from "../../../components/Wrappers/Wrappers.styled";
 import {
   CourseItemWrapper,
   CourseItemImgWrapper,
@@ -16,6 +18,7 @@ import {
   CourseItemButtonsWrapper,
 } from "./CourseItem.styled";
 import CustomDialog from "../../../components/Dialog";
+import { faFacebook, faTwitter } from "@fortawesome/free-brands-svg-icons";
 
 export type TCourseItemData = {
   title: string;
@@ -24,6 +27,8 @@ export type TCourseItemData = {
   id: string;
   img: string;
   url?: string;
+  twitter?: string;
+  facebook?: string;
 };
 
 type TCourseItem = {
@@ -32,7 +37,8 @@ type TCourseItem = {
 };
 
 const CourseItem: FC<TCourseItem> = ({ course, keyId }) => {
-  const { title, description, startDate, id, img, url } = course;
+  const { title, description, startDate, id, img, url, twitter, facebook } =
+    course;
   const [anchorElCourseItem, setAnchorCourseItem] =
     useState<null | HTMLElement>(null);
 
@@ -73,11 +79,28 @@ const CourseItem: FC<TCourseItem> = ({ course, keyId }) => {
             Переглянути курс
           </ButtonOutline>
           <CourseItemButtonsWrapper>
-            <FlexColumn>
+            <FlexRow style={{ justifyContent: "center", gap: "6px" }}>
               <IconButton onClick={handleOpenCourseItemMenu}>
                 <FontAwesomeIcon icon={faGear} color="#244B83" width="15px" />
               </IconButton>
-
+              {twitter && (
+                <IconButton onClick={() => window.open(twitter, "_blank")}>
+                  <FontAwesomeIcon
+                    icon={faTwitter}
+                    color="#244B83"
+                    width="15px"
+                  />
+                </IconButton>
+              )}
+              {facebook && (
+                <IconButton onClick={() => window.open(facebook, "_blank")}>
+                  <FontAwesomeIcon
+                    icon={faFacebook}
+                    color="#244B83"
+                    width="15px"
+                  />
+                </IconButton>
+              )}
               <Menu
                 sx={{ mt: "45px" }}
                 id="menu-settings"
@@ -105,7 +128,7 @@ const CourseItem: FC<TCourseItem> = ({ course, keyId }) => {
                   </ButtonOutline>
                 </FlexColumn>
               </Menu>
-            </FlexColumn>
+            </FlexRow>
           </CourseItemButtonsWrapper>
         </CourseItemContentWrapper>
       </CourseItemWrapper>

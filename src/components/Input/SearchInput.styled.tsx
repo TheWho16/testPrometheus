@@ -4,6 +4,12 @@ import { IconButtonTypeMap, OutlinedInputProps } from "@mui/material";
 import { OverridableComponent } from "@mui/material/OverridableComponent";
 import { Breakpoints } from "../../enums/Breakpoints";
 
+export const SearchForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+`;
+
 export const CustomIconButton = styled(IconButton)`
   border: none;
   outline: none;

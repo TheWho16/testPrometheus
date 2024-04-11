@@ -31,7 +31,9 @@ const Dashboard: FC = () => {
       setSearchCourses(undefined);
       return;
     }
-    if (!searchInputValue) {
+    if (!searchInputValue || searchInputValue.trim().length === 0) {
+      setSearchInputValue("");
+      setSearchCourses(undefined);
       return;
     }
     setSearchCourses(
@@ -49,8 +51,12 @@ const Dashboard: FC = () => {
         <DashboardContent>
           <FlexColumn style={{ flexGrow: 1, gap: "10px" }}>
             <DashboardHeader>Мої курси</DashboardHeader>
-            {courseData.map((item) => (
-              <CourseItem keyId={`CourseItem-${item.id}`} course={item} />
+            {courseData.map((item, index) => (
+              <CourseItem
+                keyId={`CourseItem-${item.id}-${index}`}
+                key={`key-CourseItem-${item.id}-${index}`}
+                course={item}
+              />
             ))}
           </FlexColumn>
           <SearchInputWrapper>
@@ -71,9 +77,10 @@ const Dashboard: FC = () => {
                 <SearchContentSubText>
                   {searchCourses.length} збігів для {searchInputValue}
                 </SearchContentSubText>
-                {searchCourses.map((item) => (
+                {searchCourses.map((item, index) => (
                   <SearchCourseItem
-                    keyId={`SearchCourseItem-${item.id}`}
+                    key={`key-searchCourses-${item.id}-${index}`}
+                    keyId={`SearchCourseItem-${item.id}-${index}`}
                     course={item}
                   />
                 ))}

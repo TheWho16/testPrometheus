@@ -18,3 +18,8 @@ a {
 a:hover {
   color: #f58932;
 }
+
+.after::after {
+  content: "\00BB";
+  padding-left: 4px;
+}

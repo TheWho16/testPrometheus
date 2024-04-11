@@ -5,6 +5,7 @@ import {
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Divider } from "@mui/material";
 import React, { FC } from "react";
 import { FlexRow } from "../Wrappers/Wrappers.styled";
 import {
@@ -18,6 +19,8 @@ import {
   FooterLinkSmall,
   FooterImgSmall,
   FooterAsideBlock,
+  FooterBlockWrapperMob,
+  FooterAsideBlockMob,
 } from "./Footer.styled";
 
 const Footer: FC = () => {
@@ -35,7 +38,7 @@ const Footer: FC = () => {
           </FooterLink>
         </FooterBlockWrapper>
 
-        <FooterBlockWrapper style={{ flexGrow: 2 }}>
+        <FooterBlockWrapperMob>
           <FooterTitle>Prometheus+</FooterTitle>
           <FooterLink
             onClick={() =>
@@ -54,7 +57,7 @@ const Footer: FC = () => {
           >
             Співпраця
           </FooterLink>
-        </FooterBlockWrapper>
+        </FooterBlockWrapperMob>
 
         <FooterBlockWrapper style={{ flexGrow: 1, alignItems: "flex-start" }}>
           <FooterTitle>Мобільні застосунки</FooterTitle>
@@ -78,8 +81,9 @@ const Footer: FC = () => {
           />
         </FooterBlockWrapper>
       </FooterContainer>
+      <Divider variant="middle" />
       <FooterAside>
-        <FooterAsideBlock style={{ gap: "50px" }}>
+        <FooterAsideBlockMob>
           <FooterLinkSmall
             onClick={() => window.open("https://prometheus.org.ua/", "_blank")}
           >
@@ -106,7 +110,7 @@ const Footer: FC = () => {
           >
             Допомога
           </FooterLinkSmall>
-        </FooterAsideBlock>
+        </FooterAsideBlockMob>
         <FooterAsideBlock style={{ marginLeft: "8%", gap: "20px" }}>
           <FooterImgSmall src="https://prometheus.org.ua/wp-content/themes/prometheus/assets/images/visa-logo.svg?x38305" />
           <FooterImgSmall src="https://prometheus.org.ua/wp-content/themes/prometheus/assets/images/mastercard-logo.svg?x38305" />

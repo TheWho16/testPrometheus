@@ -125,6 +125,7 @@ export const CustomMenuItem = styled(MenuItem)`
   padding: 12px 20px !important;
   border-bottom: 1px solid #e7e7e7 !important;
   color: #9e9e9e !important;
+
   &:hover {
     cursor: pointer;
   }
@@ -140,4 +141,14 @@ export const CustomMenuItem = styled(MenuItem)`
       background-color: #767676 !important;
     }
   }
+`;
+
+export const MobMenuText = styled.div`
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  outline: none;
+  display: block;
+  width: 100%;
+  cursor: pointer;
 `;

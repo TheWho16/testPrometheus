@@ -9,6 +9,7 @@ import {
   AccordionSummaryContentWrapper,
   AccordionDetailsContentWrapper,
   CustomMenuItem,
+  MobMenuText,
 } from "./Navbar.styled";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -27,11 +28,11 @@ import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
 import { ButtonOrange, DefaultButton } from "../Buttons";
 
 const pages = [
-  "Мої курси >>",
-  "Профіль >>",
-  "Налаштування >>",
-  "Історія замовлень >>",
-  "Вийти >>",
+  "Мої курси ",
+  "Профіль ",
+  "Налаштування",
+  "Історія замовлень",
+  "Вийти ",
 ];
 
 const Navbar: FC = () => {
@@ -80,7 +81,7 @@ const Navbar: FC = () => {
                     key={page}
                     onClick={() => setOpenNav(!openNav)}
                   >
-                    <Typography textAlign="center">{page}</Typography>
+                    <MobMenuText className="after">{page}</MobMenuText>
                   </CustomMenuItem>
                 ))}
               </AccordionDetailsContentWrapper>
